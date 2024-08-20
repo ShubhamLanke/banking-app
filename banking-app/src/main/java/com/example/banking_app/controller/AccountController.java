@@ -2,7 +2,6 @@ package com.example.banking_app.controller;
 
 import com.example.banking_app.dto.AccountDto;
 import com.example.banking_app.service.AccountService;
-import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -50,6 +49,7 @@ public class AccountController {
     }
 
     //Get All Accounts REST API
+    @CrossOrigin(origins ="http://localhost:4200/")
     @GetMapping
     public ResponseEntity<List<AccountDto>> getAllAccounts(){
         List<AccountDto> accounts = accountService.getAllAccount();
